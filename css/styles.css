@@ -1,0 +1,69 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: #000;
+	color: #555;
+	font-family: consolas;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+section {
+	padding: 100px;
+}
+section h2 {
+	font-size: 3.5em;
+}
+section p {
+	font-size: 1.2em;
+}
+#scrollpath {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 10px;
+	height: 100%;
+	background-color: rgba(255, 255, 255, .05);
+}
+#progressbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 10px;
+	background-image: linear-gradient(to top, #008aff, #00ffe7);
+	animation: animate 5s linear infinite;
+}
+#progressbar:before,
+#progressbar:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to top, #008aff, #00ffe7);
+	filter: blur(10px);
+}
+#progressbar:after {
+	filter: blur(30px);
+}
+@keyframes animate {
+	0%, 100% {
+		filter: hue-rotate(0);
+	}
+	50% {
+		filter: hue-rotate(360deg)
+	}
+}
+#percent {
+	position: fixed;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%) rotate(180deg);
+	color: #fff;
+	font-size: 1.5em;
+	writing-mode: vertical-lr;
+}
